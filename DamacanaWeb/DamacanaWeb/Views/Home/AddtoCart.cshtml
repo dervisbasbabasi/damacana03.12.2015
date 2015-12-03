@@ -1,0 +1,8 @@
+﻿@model DamacanaWeb.Models.Product
+@{
+    ViewBag.Title = "AddtoCart";
+}
+<p style='font-size:35px; color:lawngreen'>Add To Cart</p>
+@using (Html.BeginForm("ProductList", "Home", FormMethod.Post))
+{<div class=" alert alert-success" role="alert"> <b> Saved </b></div>}
+<meta http-equiv="refresh" content="3;URL=http://localhost:63411/Home/ProductList">

@@ -1,0 +1,24 @@
+﻿@using DamacanaWeb.Models;
+@model List<DamacanaWeb.Models.Product>
+@{
+    ViewBag.Title = "ProductList";
+}
+<p>ProductList</p>
+<hr />
+
+@foreach (var item in Model)
+{
+    <div>
+        <p><img src="http://www.ambalaj.org.tr/files/images/anadolucam_2014.jpg" alt="Damacana" height="215" width="225"></p>
+        <p>Product ID:  @Html.DisplayFor(modelItem => item.Id)</p>
+        <p>Product Name: @Html.DisplayFor(modelItem => item.Name)</p>
+        <p>Product Price: @Html.DisplayFor(modelItem => item.Price)</p>
+        <p>Cart ID: @Html.DisplayFor(modelItem => item.CartId)</p>
+        <p>
+            <a href="@Url.Action("AddtoCart", new { name = item.Name })"> Add To Cart </a>|
+            <a href="@Url.Action("EditProduct", new { name = item.Name })"> Edit </a>| 
+            <a href="@Url.Action("DeleteProduct", new { name = item.Name })"> Delete </a>
+        </p>
+
+    </div>
+}

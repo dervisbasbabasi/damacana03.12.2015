@@ -1,0 +1,10 @@
+﻿
+@model DamacanaWeb.Models.Product
+@{
+    ViewBag.Title = "SaveProduct";
+}
+<p> Save Product</p>
+
+@using (Html.BeginForm("ProductList", "Home", FormMethod.Post))
+{<div class=" alert alert-success" role="alert"> <b>Save your product </b></div>}
+<meta http-equiv="refresh" content="3;URL=http://localhost:63411/Home/ProductList">

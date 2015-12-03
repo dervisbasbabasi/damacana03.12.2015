@@ -1,0 +1,23 @@
+﻿@using DamacanaWeb.Models;
+@model List<DamacanaWeb.Models.Cart>
+@{
+    ViewBag.Title = "CartList";
+}
+<p>Cart List</p>
+
+@foreach (var item in Model)
+{
+    <tr>
+        <td>
+            <p>Cart ID:  @Html.DisplayFor(modelItem => item.Id) </p>
+            <p> User ID: @Html.DisplayFor(modelItem => item.UserId)</p>
+            <p><a href="@Url.Action("ProductListofEachCart",new { id = item.Id })"> Products in Cart</a></p>
+
+        </td>
+        <td>
+            <a href="@Url.Action("EditCart", new { id = item.Id })"> EDIT </a>|
+            <a href="@Url.Action("DeleteCart", new { id = item.Id })"> DELETE </a>
+
+        </td>
+    </tr>
+}
